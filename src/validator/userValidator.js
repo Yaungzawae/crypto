@@ -7,8 +7,8 @@ module.exports.userValidator = [
     .notEmpty()
     .withMessage("Email cannot be empty")
     .bail()
-    .isLength({ min: 6 })
-    .withMessage("Email needs to be at least six characters")
+    .isEmail()
+    .withMessage("Invalid email address")
     .bail(),
   check("password")
     .trim()
